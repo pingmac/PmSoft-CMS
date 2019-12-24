@@ -9,7 +9,7 @@ namespace PmSoft.Logging
     /// <summary>
     /// 系统日志工厂 
     /// </summary>
-    public static class LogFactory
+    public static class LoggerFactory
     {
 
         public static ILogger<T> GetLogger<T>()

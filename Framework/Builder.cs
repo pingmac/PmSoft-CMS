@@ -13,6 +13,8 @@ using PmSoft.Repositories;
 using PmSoft.Tasks;
 using PmSoft.Tasks.Quartz;
 using PmSoft.DBContext;
+using Microsoft.Extensions.Logging;
+using PmSoft.Log4Net;
 
 namespace PmSoft
 {
@@ -36,7 +38,7 @@ namespace PmSoft
             //添加分布式缓存
             services.AddDistributedRedisCache(options =>
             {
-                options.InstanceName = configuration.GetValue<string>("RedisInstanceName") ?? "Soft";
+                options.InstanceName = configuration.GetValue<string>("RedisInstanceName") ?? "PmSoft";
                 options.Configuration = configuration.GetConnectionString("RedisConnection");
             });
 
@@ -58,6 +60,16 @@ namespace PmSoft
 
             //仓库注册
             services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
+
+            //日志
+            services.AddLogging(builder =>
+            {
+                builder
+                .AddFilter("Microsoft", LogLevel.Warning)
+                //.AddConsole()
+                .AddDebug()
+                .AddLog4Net();
+            });
 
             //注册CAP
             //services.Configure<DotNetCore.CAP.RabbitMQOptions>(configuration.GetSection("RabbitMQ"));

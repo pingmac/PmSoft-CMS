@@ -63,7 +63,7 @@ namespace PmSoft.Tasks
         public async Task UpdateAsync(TaskDetail entity)
         {
             await taskDetailRepository.UpdateAsync(entity);
-            TaskSchedulerFactory.GetScheduler().Update(entity);
+            ServiceLocator.GetService<ITaskScheduler>().Update(entity);
         }
     }
 }

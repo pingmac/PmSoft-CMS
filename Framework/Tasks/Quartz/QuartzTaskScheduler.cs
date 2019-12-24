@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 using PmSoft.Logging;
 
 
@@ -79,27 +78,27 @@ namespace PmSoft.Tasks.Quartz
         /// 运行单个任务
         /// </summary>
         /// <param name="task"></param>
-        public async Task Run(TaskDetail task)
+        public async Task Run(TaskDetail taskDetail)
         {
-            if (task != null)
+            if (taskDetail != null)
             {
-                Type type = Type.GetType(task.ClassType);
+                Type type = Type.GetType(taskDetail.ClassType);
                 if (type == null)
                 {
-                    LogFactory.GetLogger<QuartzTaskScheduler>().LogWarning("任务： {0} 的taskType为空。", task.Name);
+                    LoggerFactory.GetLogger<QuartzTaskScheduler>().LogWarning($"任务： {taskDetail.Name} 的taskType为空。");
                 }
                 else
                 {
-                    ITask task2 = (ITask)Activator.CreateInstance(type);
-                    if ((task2 != null) && !task.IsRunning)
+                    ITask task = (ITask)Activator.CreateInstance(type);
+                    if (task != null && !taskDetail.IsRunning)
                     {
                         try
                         {
-                            await task2.ExecuteAsync(null);
+                            await task.ExecuteAsync(null);
                         }
                         catch (Exception exception)
                         {
-                            LogFactory.GetLogger<QuartzTaskScheduler>().LogError(exception, string.Format("执行任务： {0} 出现异常。", task.Name));
+                            LoggerFactory.GetLogger<QuartzTaskScheduler>().LogError(exception, string.Format("执行任务： {0} 出现异常。", taskDetail.Name));
                         }
                     }
                 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 using PmSoft.Logging;
 using Quartz;
 
@@ -20,7 +19,7 @@ namespace PmSoft.Tasks.Quartz
         {
 
             int Id = context.JobDetail.JobDataMap.GetInt("Id");
-            TaskDetail task = TaskSchedulerFactory.GetScheduler().GetTask(Id);
+            TaskDetail task = ServiceLocator.GetService<ITaskScheduler>().GetTask(Id);
             if (task == null)
             {
                 throw new ArgumentException("Not found task ：" + task.Name);
@@ -35,7 +34,7 @@ namespace PmSoft.Tasks.Quartz
             }
             catch (Exception exception)
             {
-                LogFactory.GetLogger<QuartzTask>().LogError(exception, $"Exception while running job {context.JobDetail.Key} of type {context.JobDetail.JobType}");
+                LoggerFactory.GetLogger<QuartzTask>().LogError(exception, $"Exception while running job {context.JobDetail.Key} of type {context.JobDetail.JobType}");
                 task.LastIsSuccess = false;
             }
             task.IsRunning = false;
