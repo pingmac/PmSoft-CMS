@@ -18,7 +18,12 @@ namespace PmSoft
 {
     public static class Builder
     {
-        public static void UseFrameWork(this IServiceCollection services, IConfiguration configuration, IHostingEnvironment hostingEnvironment)
+        /// <summary>
+        /// 注入基础组件
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        public static void AddPmSoftFrameWork(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.All));
 
