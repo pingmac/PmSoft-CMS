@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementWebHost", "ManagementWebHost\ManagementWebHost.csproj", "{07151A58-99C8-45BC-B858-B7872AEA0741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07151A58-99C8-45BC-B858-B7872AEA0741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07151A58-99C8-45BC-B858-B7872AEA0741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07151A58-99C8-45BC-B858-B7872AEA0741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07151A58-99C8-45BC-B858-B7872AEA0741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23FD300C-8987-49BB-B8F3-DC3A6C6D84C0}
+	EndGlobalSection
+EndGlobal
