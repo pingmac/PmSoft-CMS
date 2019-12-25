@@ -1,0 +1,126 @@
+2019-12-25 14:22:59,275 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 14:22:59,290 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 14:22:59,292 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 14:22:59,367 [INFO] [PmSoft.Caching.DefaultCacheService] [20] - DefaultCacheService::Init,EnableDistributedCache:False,CacheExpirationFactor:1.
+2019-12-25 14:24:51,910 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 14:24:51,924 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 14:24:51,926 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 14:28:00,990 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 14:28:01,008 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 14:28:01,011 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 15:45:27,241 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 15:45:27,258 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 15:45:27,263 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:40:32,235 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:40:32,249 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:40:32,252 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:40:32,317 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:False,CacheExpirationFactor:1.
+2019-12-25 16:42:58,298 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:42:58,315 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:42:58,318 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:43:13,162 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:43:13,176 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:43:13,177 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:44:47,880 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:44:47,895 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:44:47,898 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:44:49,858 [INFO] [PmSoft.Caching.DefaultCacheService] [19] - DefaultCacheService::Init,EnableDistributedCache:False,CacheExpirationFactor:1.
+2019-12-25 16:48:24,600 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:48:24,615 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:48:24,617 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:50:34,450 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:50:34,465 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:50:34,470 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:50:39,257 [INFO] [PmSoft.Caching.DefaultCacheService] [7] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 16:53:59,809 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:53:59,824 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:53:59,825 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:54:04,950 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 16:55:45,268 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 16:55:45,284 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 16:55:45,286 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 16:55:45,349 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 17:01:11,055 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 17:01:11,070 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 17:01:11,072 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 17:01:11,141 [INFO] [PmSoft.Caching.DefaultCacheService] [4] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 17:02:51,554 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 17:02:51,568 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 17:02:51,571 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 17:02:51,642 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 17:05:18,291 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 17:05:18,307 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 17:05:18,309 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 17:05:18,376 [INFO] [PmSoft.Caching.DefaultCacheService] [4] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 17:09:11,315 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 17:09:11,331 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 17:09:11,334 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 17:09:11,401 [INFO] [PmSoft.Caching.DefaultCacheService] [17] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 17:17:33,516 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 17:17:33,534 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 17:17:33,536 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 17:17:33,606 [INFO] [PmSoft.Caching.DefaultCacheService] [4] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 17:19:01,830 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 17:19:01,846 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 17:19:01,848 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 17:19:01,916 [INFO] [PmSoft.Caching.DefaultCacheService] [7] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 18:38:47,785 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 18:38:47,800 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 18:38:47,804 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 18:38:47,868 [INFO] [PmSoft.Caching.DefaultCacheService] [7] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 18:53:05,844 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 18:53:05,860 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 18:53:05,863 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 18:53:05,930 [INFO] [PmSoft.Caching.DefaultCacheService] [4] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 18:55:16,255 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 18:55:16,270 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 18:55:16,271 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 18:55:16,329 [INFO] [PmSoft.Caching.DefaultCacheService] [7] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:21:21,691 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:21:21,707 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:21:21,710 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:21:21,771 [INFO] [PmSoft.Caching.DefaultCacheService] [20] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:28:03,577 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:28:03,592 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:28:03,594 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:28:03,668 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:31:49,413 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:31:49,427 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:31:49,430 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:31:49,506 [INFO] [PmSoft.Caching.DefaultCacheService] [22] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:36:09,372 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:36:09,387 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:36:09,389 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:36:09,448 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:44:13,959 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:44:13,977 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:44:13,982 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:44:14,051 [INFO] [PmSoft.Caching.DefaultCacheService] [22] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:48:26,576 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:48:26,592 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:48:26,595 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:48:26,670 [INFO] [PmSoft.Caching.DefaultCacheService] [20] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:48:46,410 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:48:46,428 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:48:46,430 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:48:46,495 [INFO] [PmSoft.Caching.DefaultCacheService] [4] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:49:59,094 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:49:59,109 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:49:59,111 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:49:59,180 [INFO] [PmSoft.Caching.DefaultCacheService] [18] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:51:31,256 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:51:31,275 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:51:31,278 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:51:31,334 [INFO] [PmSoft.Caching.DefaultCacheService] [20] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:53:08,284 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:53:08,300 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:53:08,303 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:53:08,372 [INFO] [PmSoft.Caching.DefaultCacheService] [25] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:56:03,937 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:56:03,955 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:56:03,958 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:56:04,020 [INFO] [PmSoft.Caching.DefaultCacheService] [28] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.
+2019-12-25 19:57:12,447 [INFO] [Microsoft.Hosting.Lifetime] [1] - Application started. Press Ctrl+C to shut down.
+2019-12-25 19:57:12,464 [INFO] [Microsoft.Hosting.Lifetime] [1] - Hosting environment: Development
+2019-12-25 19:57:12,465 [INFO] [Microsoft.Hosting.Lifetime] [1] - Content root path: D:\work\github\PmSoft-CMS\ManagementWebHost
+2019-12-25 19:57:12,520 [INFO] [PmSoft.Caching.DefaultCacheService] [21] - DefaultCacheService::Init,EnableDistributedCache:True,CacheExpirationFactor:1.

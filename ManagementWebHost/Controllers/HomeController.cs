@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ManagementWebHost.Models;
+using PmSoft.Caching;
+using PmSoft.Events;
 
 namespace ManagementWebHost.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICacheService cacheService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICacheService cacheService)
         {
             _logger = logger;
+            this.cacheService = cacheService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            await RedisEventBus<object, CommonEventArgs>.Instance().PublishAsync(1, new CommonEventArgs(string.Empty));
+            return Json(new { });
         }
 
         public IActionResult Privacy()

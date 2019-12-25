@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using StackExchange.Redis.Extensions.Core.Configuration;
 using PmSoft.Caching;
-using PmSoft.Caching.Redis;
 using PmSoft.Repositories;
 using PmSoft.Tasks;
 using PmSoft.Tasks.Quartz;
 using PmSoft.DBContext;
-using Microsoft.Extensions.Logging;
 using PmSoft.Log4Net;
+using PmSoft.Events;
 
 namespace PmSoft
 {
@@ -35,15 +36,11 @@ namespace PmSoft
             //控制器方法上下文访问器
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
-            //添加分布式缓存
-            services.AddDistributedRedisCache(options =>
-            {
-                options.InstanceName = configuration.GetValue<string>("RedisInstanceName") ?? "PmSoft";
-                options.Configuration = configuration.GetConnectionString("RedisConnection");
-            });
+            //添加Redis客户端
+            services.AddRedisCacheClient(() => configuration.GetSection("Redis").Get<RedisConfiguration>());
 
             //注册默认缓存服务
-            services.Configure<CacheServiceOptions>(options => configuration.GetSection("CacheService"));
+            services.Configure<CacheServiceOptions>(configuration.GetSection("CacheService"));
             services.AddDefaultCacheService();
 
             //注册数据库上下文调度器
@@ -70,6 +67,9 @@ namespace PmSoft
                 .AddDebug()
                 .AddLog4Net();
             });
+
+            //注册定时任务业务逻辑
+            services.AddSingleton<TaskService>();
 
             //注册CAP
             //services.Configure<DotNetCore.CAP.RabbitMQOptions>(configuration.GetSection("RabbitMQ"));

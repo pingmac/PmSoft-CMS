@@ -3,24 +3,23 @@ using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using Microsoft.Extensions.Caching.Distributed;
-using Newtonsoft.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Caching.Distributed;
+using StackExchange.Redis.Extensions.Core.Abstractions;
+using Newtonsoft.Json;
 
 namespace PmSoft.Caching
 {
     /// <summary>
-    /// 用于连接Memcached的分布式缓存
+    /// 分布式缓存
     /// </summary>
     public class DistributedMemoryCache : ICache
     {
-        private readonly IDistributedCache cache;
-        public ISerializer serializer;
+        private readonly IRedisCacheClient cache;
 
-        public DistributedMemoryCache(IDistributedCache distributedCache)
+        public DistributedMemoryCache(IRedisCacheClient cache)
         {
-            this.cache = distributedCache ?? throw new ArgumentNullException(nameof(distributedCache));
-            this.serializer = new BinarySerializer();
+            this.cache = cache ?? throw new ArgumentNullException(nameof(cache));
         }
 
         /// <summary>
@@ -31,21 +30,6 @@ namespace PmSoft.Caching
         /// <param name="timeSpan">缓存失效时间</param>
         public void Add(string key, object value, TimeSpan timeSpan)
         {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
-
-            if (timeSpan == null)
-            {
-                throw new ArgumentNullException(nameof(timeSpan));
-            }
-
             this.Set(key, value, timeSpan);
         }
 
@@ -58,21 +42,6 @@ namespace PmSoft.Caching
         /// <param name="timeSpan">缓存失效时间</param>
         public async Task AddAsync(string key, object value, TimeSpan timeSpan)
         {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
-
-            if (timeSpan == null)
-            {
-                throw new ArgumentNullException(nameof(timeSpan));
-            }
-
             await this.SetAsync(key, value, timeSpan);
         }
 
@@ -82,15 +51,15 @@ namespace PmSoft.Caching
         /// </summary>
         public void Clear()
         {
-
+            ClearAsync().Wait();
         }
 
         /// <summary>
         /// 清空缓存
         /// </summary>
-        public Task ClearAsync()
+        public async Task ClearAsync()
         {
-            return Task.Run(() => Clear());
+            await this.cache.Db0.FlushDbAsync();
         }
 
         /// <summary>
@@ -100,20 +69,7 @@ namespace PmSoft.Caching
         /// <returns></returns>
         public object Get(string key)
         {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            key = key.ToLower();
-
-            byte[] data = this.cache.Get(key);
-
-            if (data == null) return null;
-
-            object result = this.serializer.Deserialize(data);
-
-            return result;
+            return GetAsync(key).Result;
         }
 
         /// <summary>
@@ -130,13 +86,7 @@ namespace PmSoft.Caching
 
             key = key.ToLower();
 
-            byte[] data = await this.cache.GetAsync(key);
-
-            if (data == null) return null;
-
-            object result = await this.serializer.DeserializeAsync(data);
-
-            return result;
+            return await this.cache.Db0.GetAsync<object>(key);
         }
 
         /// <summary>
@@ -151,7 +101,7 @@ namespace PmSoft.Caching
             }
 
             key = key.ToLower();
-            this.cache.Remove(key);
+            RemoveAsync(key).Wait();
         }
 
         /// <summary>
@@ -166,7 +116,7 @@ namespace PmSoft.Caching
             }
 
             key = key.ToLower();
-            await this.cache.RemoveAsync(key);
+            await this.cache.Db0.RemoveAsync(key);
         }
 
         /// <summary>
@@ -177,30 +127,7 @@ namespace PmSoft.Caching
         /// <param name="timeSpan">缓存失效时间</param>
         public void Set(string key, object value, TimeSpan timeSpan)
         {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
-
-            if (timeSpan == null)
-            {
-                throw new ArgumentNullException(nameof(timeSpan));
-            }
-
-            key = key.ToLower();
-            if (value != null)
-            {
-                DistributedCacheEntryOptions distributedCacheEntryOptions = new DistributedCacheEntryOptions();
-
-                byte[] bytes = this.serializer.Serialize(value);
-
-                this.cache.Set(key, bytes, distributedCacheEntryOptions.SetSlidingExpiration(timeSpan));
-            }
+            SetAsync(key, value, timeSpan).Wait();
         }
 
         /// <summary>
@@ -229,11 +156,13 @@ namespace PmSoft.Caching
             key = key.ToLower();
             if (value != null)
             {
-                DistributedCacheEntryOptions distributedCacheEntryOptions = new DistributedCacheEntryOptions();
+                IRedisDatabase database = this.cache.Db0;
 
-                byte[] bytes = await this.serializer.SerializeAsync(value);
-
-                await this.cache.SetAsync(key, bytes, distributedCacheEntryOptions.SetSlidingExpiration(timeSpan));
+                if (database == null)
+                {
+                    throw new NullReferenceException(nameof(database));
+                }
+                await database.AddAsync(key, value, DateTimeOffset.Now.AddMinutes(10));
             }
         }
     }

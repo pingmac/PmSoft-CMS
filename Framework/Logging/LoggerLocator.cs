@@ -5,11 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace PmSoft.Logging
 {
-
-    /// <summary>
-    /// 系统日志工厂 
-    /// </summary>
-    public static class LoggerFactory
+    public class LoggerLocator
     {
 
         public static ILogger<T> GetLogger<T>()

@@ -1,8 +1,11 @@
-﻿namespace PmSoft.Logging
+﻿using System;
+
+namespace PmSoft.Logging
 {
     /// <summary>
     /// 操作者信息
     /// </summary>
+    [Serializable]
     public class OperatorInfo
     {
         /// <summary>

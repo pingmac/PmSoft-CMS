@@ -1,11 +1,10 @@
-﻿using Quartz;
+﻿using PmSoft.Logging;
+using Quartz;
 using Quartz.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PmSoft.Logging;
-
 
 namespace PmSoft.Tasks.Quartz
 {
@@ -85,7 +84,7 @@ namespace PmSoft.Tasks.Quartz
                 Type type = Type.GetType(taskDetail.ClassType);
                 if (type == null)
                 {
-                    LoggerFactory.GetLogger<QuartzTaskScheduler>().LogWarning($"任务： {taskDetail.Name} 的taskType为空。");
+                    LoggerLocator.GetLogger<QuartzTaskScheduler>().LogWarning($"任务： {taskDetail.Name} 的taskType为空。");
                 }
                 else
                 {
@@ -98,7 +97,7 @@ namespace PmSoft.Tasks.Quartz
                         }
                         catch (Exception exception)
                         {
-                            LoggerFactory.GetLogger<QuartzTaskScheduler>().LogError(exception, string.Format("执行任务： {0} 出现异常。", taskDetail.Name));
+                            LoggerLocator.GetLogger<QuartzTaskScheduler>().LogError(exception, string.Format("执行任务： {0} 出现异常。", taskDetail.Name));
                         }
                     }
                 }

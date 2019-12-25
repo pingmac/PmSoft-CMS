@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using PmSoft.Logging;
 using Quartz;
 
@@ -34,7 +35,7 @@ namespace PmSoft.Tasks.Quartz
             }
             catch (Exception exception)
             {
-                LoggerFactory.GetLogger<QuartzTask>().LogError(exception, $"Exception while running job {context.JobDetail.Key} of type {context.JobDetail.JobType}");
+                LoggerLocator.GetLogger<QuartzTask>().LogError(exception, $"Exception while running job {context.JobDetail.Key} of type {context.JobDetail.JobType}");
                 task.LastIsSuccess = false;
             }
             task.IsRunning = false;

@@ -15,6 +15,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Caching\Redis\**" />
+    <Compile Remove="Events\RedisEventBus\**" />
+    <EmbeddedResource Remove="Caching\Redis\**" />
+    <EmbeddedResource Remove="Events\RedisEventBus\**" />
+    <None Remove="Caching\Redis\**" />
+    <None Remove="Events\RedisEventBus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.17" />
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
@@ -29,6 +38,8 @@
     <PackageReference Include="MySql.Data" Version="8.0.18" />
     <PackageReference Include="Quartz" Version="3.0.7" />
     <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+    <PackageReference Include="StackExchange.Redis.Extensions.Binary" Version="5.5.0" />
+    <PackageReference Include="StackExchange.Redis.Extensions.Core" Version="5.5.0" />
   </ItemGroup>
 
 </Project>

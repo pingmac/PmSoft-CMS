@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
+using StackExchange.Redis.Extensions.Core.Abstractions;
 
 namespace PmSoft.Caching
 {
@@ -28,7 +29,7 @@ namespace PmSoft.Caching
         /// <param name="localCache">本地内存缓存器</param>
         /// <param name="logger">日志</param>
         public DefaultCacheService(IOptions<CacheServiceOptions> optionsAccessor,
-            IDistributedCache distributedCache,
+            IRedisCacheClient distributedCache,
             IMemoryCache localCache,
             ILogger<DefaultCacheService> logger)
         {
