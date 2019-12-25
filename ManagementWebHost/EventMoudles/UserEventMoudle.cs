@@ -17,13 +17,31 @@ namespace ManagementWebHost.EventMoudles
 
         public void RegisterEventHandler()
         {
-            eventBus.Subscribe<CommonEventArgs, TestUserEventHandler>();
+            eventBus.Subscribe<object, CommonEventArgs, CommonEventHandler>();
+            eventBus.Subscribe<int, CommonEventArgs, Common2EventHandler>();
+            eventBus.Subscribe<object, UserEventArgs, UserEventHandler>();
         }
     }
 
-    public class TestUserEventHandler : IEventHandler<CommonEventArgs>
+    public class CommonEventHandler : IEventHandler<object, CommonEventArgs>
     {
-        public async Task HandleAsync(CommonEventArgs eventArgs)
+        public async Task HandleAsync(object sender, CommonEventArgs eventArgs)
+        {
+            await Task.Delay(10);
+        }
+    }
+
+    public class Common2EventHandler : IEventHandler<int, CommonEventArgs>
+    {
+        public async Task HandleAsync(int sender, CommonEventArgs eventArgs)
+        {
+            await Task.Delay(10);
+        }
+    }
+
+    public class UserEventHandler : IEventHandler<object, UserEventArgs>
+    {
+        public async Task HandleAsync(object sender, UserEventArgs eventArgs)
         {
             await Task.Delay(10);
         }

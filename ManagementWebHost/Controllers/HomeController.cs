@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using ManagementWebHost.Models;
 using PmSoft.Caching;
 using PmSoft.Events;
+using ManagementWebHost.EventMoudles;
 
 namespace ManagementWebHost.Controllers
 {
@@ -24,7 +25,9 @@ namespace ManagementWebHost.Controllers
 
         public async Task<IActionResult> Index()
         {
-            await eventBus.PublishAsync(new CommonEventArgs(string.Empty));
+            await eventBus.PublishAsync<object, CommonEventArgs>(1, new CommonEventArgs(string.Empty));
+            await eventBus.PublishAsync<int, CommonEventArgs>(2, new CommonEventArgs(string.Empty));
+            await eventBus.PublishAsync<object, UserEventArgs>(1, new UserEventArgs());
             return Json(new { });
         }
 

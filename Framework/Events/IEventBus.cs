@@ -12,14 +12,19 @@ namespace PmSoft.Events
         /// <summary>
         /// 订阅事件
         /// </summary>
-        /// <typeparam name="TEventHandler">事件处理类</typeparam>
-        void Subscribe<TEventArgs, TEventHandler>() where TEventArgs : CommonEventArgs where TEventHandler : IEventHandler<CommonEventArgs>;
+        /// <typeparam name="TSender"></typeparam>
+        /// <typeparam name="TEventArgs"></typeparam>
+        /// <typeparam name="TEventHandler"></typeparam>
+        void Subscribe<TSender, TEventArgs, TEventHandler>() where TEventArgs : CommonEventArgs where TEventHandler : IEventHandler<TSender, TEventArgs>;
 
         /// <summary>
         /// 发布事件
         /// </summary>
-        /// <param name="eventArgs">事件参数</param>
+        /// <typeparam name="TSender"></typeparam>
+        /// <typeparam name="TEventArgs"></typeparam>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
         /// <returns></returns>
-        Task<bool> PublishAsync<TEventArgs>(TEventArgs eventArgs) where TEventArgs : CommonEventArgs;
+        Task<bool> PublishAsync<TSender, TEventArgs>(TSender sender, TEventArgs eventArgs) where TEventArgs : CommonEventArgs;
     }
 }
