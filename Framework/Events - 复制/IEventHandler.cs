@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PmSoft.Events
 {
-    public interface IEventHandler<TSender, TEventArgs> where TEventArgs : CommonEventArgs
+    public interface IEventHandler<TEventArgs> where TEventArgs : CommonEventArgs
     {
         Task HandleAsync(TEventArgs eventArgs);
     }

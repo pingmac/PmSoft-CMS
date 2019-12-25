@@ -8,13 +8,20 @@ namespace ManagementWebHost.EventMoudles
 {
     public class UserEventMoudle : IEventMoudle
     {
+        private readonly IEventBus eventBus;
+
+        public UserEventMoudle(IEventBus eventBus)
+        {
+            this.eventBus = eventBus;
+        }
+
         public void RegisterEventHandler()
         {
-            RedisEventBus<object, CommonEventArgs>.Instance().Subscribe<TestUserEventHandler>();
+            eventBus.Subscribe<CommonEventArgs, TestUserEventHandler>();
         }
     }
 
-    public class TestUserEventHandler : IEventHandler<object, CommonEventArgs>
+    public class TestUserEventHandler : IEventHandler<CommonEventArgs>
     {
         public async Task HandleAsync(CommonEventArgs eventArgs)
         {

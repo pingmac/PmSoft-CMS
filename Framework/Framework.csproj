@@ -16,10 +16,13 @@
 
   <ItemGroup>
     <Compile Remove="Caching\Redis\**" />
+    <Compile Remove="Events - 复制\**" />
     <Compile Remove="Events\RedisEventBus\**" />
     <EmbeddedResource Remove="Caching\Redis\**" />
+    <EmbeddedResource Remove="Events - 复制\**" />
     <EmbeddedResource Remove="Events\RedisEventBus\**" />
     <None Remove="Caching\Redis\**" />
+    <None Remove="Events - 复制\**" />
     <None Remove="Events\RedisEventBus\**" />
   </ItemGroup>
 

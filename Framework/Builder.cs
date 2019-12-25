@@ -68,6 +68,10 @@ namespace PmSoft
                 .AddLog4Net();
             });
 
+            //注册事件总线
+            //services.AddSingleton<IEventBus, LocalEventBus>();
+            services.AddSingleton<IEventBus, RedisEventBus>();
+
             //注册定时任务业务逻辑
             services.AddSingleton<TaskService>();
 

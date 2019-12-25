@@ -7,10 +7,14 @@ using StackExchange.Redis.Extensions.Core.Abstractions;
 
 namespace PmSoft.Events
 {
-    public class RedisEventBus<TSender, TEventArgs> where TEventArgs : CommonEventArgs
+    /// <summary>
+    /// 基于Redis的分布式事件总线
+    /// </summary>
+    /// <typeparam name="TEventArgs"></typeparam>
+    public class RedisEventBus<TEventArgs> : IEventBus<TEventArgs> where TEventArgs : CommonEventArgs
     {
         private static readonly IRedisCacheClient cacheClient;
-        private static volatile RedisEventBus<TSender, TEventArgs> instance;
+        private static volatile RedisEventBus<TEventArgs> instance;
         private static readonly object lockObj;
         private const string EventsCacheKey = "Events";
 
@@ -25,7 +29,7 @@ namespace PmSoft.Events
         /// 获取实例 
         /// </summary>
         /// <returns></returns>
-        public static RedisEventBus<TSender, TEventArgs> Instance()
+        public static RedisEventBus<TEventArgs> Instance()
         {
             if (instance == null)
             {
@@ -33,7 +37,7 @@ namespace PmSoft.Events
                 {
                     if (instance == null)
                     {
-                        instance = new RedisEventBus<TSender, TEventArgs>();
+                        instance = new RedisEventBus<TEventArgs>();
                     }
                 }
             }
@@ -50,7 +54,7 @@ namespace PmSoft.Events
 
         private string GetEventKey()
         {
-            return typeof(TSender).FullName + "-" + typeof(TEventArgs).FullName;
+            return typeof(TEventArgs).FullName;
         }
 
         private async Task<bool> AddSubscriptionAsync<TEventHandler>()
@@ -90,11 +94,11 @@ namespace PmSoft.Events
         #endregion
 
         /// <summary>
-        /// 订阅
+        /// 订阅事件
         /// </summary>
-        /// <param name="handler"></param>
+        /// <typeparam name="TEventHandler">事件处理类</typeparam>
         public void Subscribe<TEventHandler>()
-            where TEventHandler : IEventHandler<TSender, TEventArgs>
+            where TEventHandler : IEventHandler<CommonEventArgs>
         {
             AddSubscriptionAsync<TEventHandler>().Wait();
 
@@ -111,11 +115,11 @@ namespace PmSoft.Events
         }
 
         /// <summary>
-        /// 触发操作事件(异步执行)
+        /// 发布事件
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="eventArgs"></param>
-        public async Task<bool> PublishAsync(TSender sender, TEventArgs eventArgs)
+        /// <param name="eventArgs">事件参数</param>
+        /// <returns></returns>
+        public async Task<bool> PublishAsync(TEventArgs eventArgs)
         {
             if (!await HasSubscriptionsForEventAsync())
                 return false;

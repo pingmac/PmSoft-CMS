@@ -13,18 +13,18 @@ namespace ManagementWebHost.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ICacheService cacheService;
+        private readonly IEventBus eventBus;
 
-        public HomeController(ILogger<HomeController> logger, ICacheService cacheService)
+        public HomeController(ICacheService cacheService, IEventBus eventBus)
         {
-            _logger = logger;
             this.cacheService = cacheService;
+            this.eventBus = eventBus;
         }
 
         public async Task<IActionResult> Index()
         {
-            await RedisEventBus<object, CommonEventArgs>.Instance().PublishAsync(1, new CommonEventArgs(string.Empty));
+            await eventBus.PublishAsync(new CommonEventArgs(string.Empty));
             return Json(new { });
         }
 

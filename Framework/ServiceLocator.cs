@@ -25,6 +25,11 @@ namespace PmSoft
             return Instance.GetService<TService>();
         }
 
+        public static TService GetService<TService>(Type type) where TService : class
+        {
+            return Instance.GetRequiredService(type) as TService;
+        }
+
         /// <summary>
         /// 获取服务集合
         /// </summary>
